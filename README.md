@@ -1,4 +1,4 @@
-#README OF BUS MERN PROJECT
+# README OF BUS MERN PROJECT
 ##_**DISCLAIMER**_
 This project has moved maintainers and is no longer developed here. The up to date template can be found [here](https://github.com/rennemannd/MERN-Template).
 
