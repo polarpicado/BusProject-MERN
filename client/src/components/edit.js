@@ -5,6 +5,8 @@ export default function Edit() {
  const [form, setForm] = useState({
    nombre: "",
    apellido: "",
+    nbus: "",
+    asientos: "",
    records: [],
  });
  const params = useParams();
@@ -16,7 +18,7 @@ export default function Edit() {
      const response = await fetch(`http://localhost:5000/record/${params.id.toString()}`);
  
      if (!response.ok) {
-       const message = `An error has occurred: ${response.statusText}`;
+       const message = `Ocurrió un error: ${response.statusText}`;
        window.alert(message);
        return;
      }
@@ -48,6 +50,8 @@ export default function Edit() {
    const editedPerson = {
     nombre: form.nombre,
      apellido: form.apellido,
+      nbus: form.nbus,
+      asientos: form.asientos,
    };
  
    // This will send a post request to update the data in the database.
@@ -85,6 +89,26 @@ export default function Edit() {
            id="apellido"
            value={form.apellido}
            onChange={(e) => updateForm({ apellido: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="nbus">Número de Bus: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="nbus"
+           value={form.nbus}
+           onChange={(e) => updateForm({ nbus : e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="asientos">Asientos: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="asientos"
+           value={form.asientos}
+           onChange={(e) => updateForm({ asientos : e.target.value })}
          />
        </div>
        <br />

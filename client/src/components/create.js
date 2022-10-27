@@ -5,6 +5,8 @@ export default function Create() {
  const [form, setForm] = useState({
    nombre: "",
    apellido: "",
+    nbus: "",
+    asientos: "",
  });
  const navigate = useNavigate();
  
@@ -34,7 +36,7 @@ export default function Create() {
      return;
    });
  
-   setForm({ nombre: "", apellido: "" });
+   setForm({ nombre: "", apellido: "" , nbus: "", asientos: ""});
    navigate("/");
  }
  
@@ -61,6 +63,26 @@ export default function Create() {
            id="apellido"
            value={form.apellido}
            onChange={(e) => updateForm({ apellido: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="nbus">Número de Bus</label>
+         <input
+           type="text"
+           className="form-control"
+           id="nbus"
+           value={form.nbus}
+           onChange={(e) => updateForm({ nbus: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="asientos">Asientos</label>
+         <input
+           type="text"
+           className="form-control"
+           id="asientos"
+           value={form.asientos}
+           onChange={(e) => updateForm({ asientos: e.target.value })}
          />
        </div>
        <div className="form-group">

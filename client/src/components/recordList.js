@@ -5,9 +5,11 @@ const Record = (props) => (
  <tr>
    <td>{props.record.nombre}</td>
    <td>{props.record.apellido}</td>
+   <td>{props.record.nbus}</td>
+    <td>{props.record.asientos}</td>
    <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Editar</Link> |
-     <button className="btn btn-link"
+     <Link className="btn btn-warning mx-2" to={`/edit/${props.record._id}`}>Editar</Link> 
+     <button className="btn btn-danger"
        onClick={() => {
          props.deleteRecord(props.record._id);
        }}
@@ -73,6 +75,8 @@ export default function RecordList() {
          <tr>
            <th>Nombre</th>
             <th>Apellido</th>
+            <th>Número de Bus</th>
+            <th>Asientos</th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>
